@@ -43,8 +43,7 @@ const Watch = ({ id, title, deleteWatch, timeZone = hourOffset }) => {
     };
   });
 
-  const onClickHandler = () => {
-    const { id } = ref.current.dataset;
+  const onClickHandler = (id) => {
     deleteWatch(id);
   };
 
@@ -68,7 +67,7 @@ const Watch = ({ id, title, deleteWatch, timeZone = hourOffset }) => {
           styles={["watch-arrow", "watch-arrow__second"]}
         />
       </div>
-      <button className={classes["watch-delete"]} onClick={onClickHandler}>
+      <button className={classes["watch-delete"]} onClick={() => onClickHandler(id)}>
         X
       </button>
     </div>
